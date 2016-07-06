@@ -1,0 +1,191 @@
+<meta charset="utf-8" />
+<head>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<style type="text/css">
+	body {
+		margin-top: 30px;
+		margin-bottom: 100px;
+	}
+	.panel-heading a:after {
+		font-family:'Glyphicons Halflings';
+		content:"\e114";
+		float: right;
+		color: grey;
+	}
+	.panel-heading a.collapsed:after {
+		content:"\e080";
+	}
+	div.center-block {
+		float: none;
+	}
+	#collapseOne .panel-body, #collapseTwo .panel-body {
+	}
+	.flashcardField {
+		font-size: 36px;
+	}
+	</style>
+	<script>
+	var currentPointer = -1;
+	var hsk1data = [
+		{'sc': "我", 'py': "wǒ", 'eng': "I, me"},
+		{'sc': "你", 'py': "nǐ", 'eng': "you (informal, singular)"},
+		{'sc': "你们", 'py': "nǐ men", 'eng': "you (informal, plural)"},
+	]
+
+	function shuffle(array) {
+		var currentIndex = array.length, temporaryValue, randomIndex;
+
+		// While there remain elements to shuffle...
+		while (0 !== currentIndex) {
+
+			// Pick a remaining element...
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex -= 1;
+
+			// And swap it with the current element.
+			temporaryValue = array[currentIndex];
+			array[currentIndex] = array[randomIndex];
+			array[randomIndex] = temporaryValue;
+		}
+
+		return array;
+	}
+	function flashCard(hskEng, hskSc, hskPy, button) {
+		if (currentPointer == -1) {
+			shuffle(hsk1data)
+		}
+		currentPointer++;
+		console.debug(currentPointer)
+		if (currentPointer == hsk1data.length*2) {
+			currentPointer = -1;
+			hskEng.html("&nbsp;");
+			hskSc.html("You're done!");
+			hskPy.html("&nbsp;");
+			button.html("Start");
+		} else if (currentPointer%2 == 0) {
+			hskEng.html(hsk1data[currentPointer/2]['eng']);
+			hskSc.html("&nbsp;");
+			hskPy.html("&nbsp;");
+			button.html("Answer");
+		} else {
+			console.debug(currentPointer/2)
+			hskSc.html(hsk1data[(currentPointer-1)/2]['sc']);
+			hskPy.html(hsk1data[(currentPointer-1)/2]['py']);
+			button.html("Next");
+		}
+	}
+	</script>
+	<head>
+		<body role="document">
+			<P>Test</P>
+
+			<!-- Fixed navbar -->
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Mandarin Tutor</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="#about">About</a></li>
+							<li><a href="#settings">Settings</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Flashcards <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#hsk1flashcards" data-toggle="collapse">HSK Level 1</a></li>
+									<li><a href="#">HSK Level 2</a></li>
+								</ul>
+								<li><a href="#contact">Contact</a></li>
+							</li>
+						</ul>
+					</div><!--/.nav-collapse -->
+				</div>
+			</nav>
+
+			<div class="container theme-showcase" role="main">
+
+				<!-- Main jumbotron for a primary marketing message or call to action -->
+				<div class="jumbotron">
+					<h1>Theme example</h1>
+					<p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
+				</div>
+
+
+				<div class="page-header">
+					<h1>About</h1>
+				</div>
+				<p>
+					<button type="button" class="btn btn-lg btn-default">Default</button>
+					<button type="button" class="btn btn-lg btn-primary">Primary</button>
+					<button type="button" class="btn btn-lg btn-success">Success</button>
+					<button type="button" class="btn btn-lg btn-info">Info</button>
+					<button type="button" class="btn btn-lg btn-warning">Warning</button>
+					<button type="button" class="btn btn-lg btn-danger">Danger</button>
+					<button type="button" class="btn btn-lg btn-link">Link</button>
+				</p>
+
+				<div class="page-header">
+					<h1>Settings</h1>
+				</div>
+				<p>Test
+				</p>
+				<div class="page-header">
+					<h1>Flashcards</h1>
+				</div>
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default" id="panel1">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-target="#collapseOne"
+								href="#collapseOne">
+								HSK Level 1
+							</a>
+						</h4>
+
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+								<div id="hsk1en" class="center-block text-center">&nbsp;</div>
+								<div id="hsk1sc" class="flashcardField center-block text-center">&nbsp;</div>
+								<div id="hsk1py" class="flashcardSubField center-block text-center">&nbsp;</div>
+							</div>
+							<div class="row">
+								<div><button type="button" class="btn btn-lg btn-default center-block" onclick="flashCard($('#hsk1en'), $('#hsk1sc'), $('#hsk1py'), $(this))">Start</button></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default" id="panel2">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-target="#collapseTwo"
+							href="#collapseTwo" class="collapsed">
+							HSK Level 2
+						</a>
+					</h4>
+
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse">
+					<div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
