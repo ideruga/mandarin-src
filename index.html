@@ -40,7 +40,37 @@
 		{'sc': "我", 'py': "wǒ", 'eng': "I, me"},
 		{'sc': "你", 'py': "nǐ", 'eng': "you (informal, singular)"},
 		{'sc': "你们", 'py': "nǐ men", 'eng': "you (informal, plural)"},
+		{'sc': "他", 'py': "tā", 'eng': "he"},
+		{'sc': "她", 'py': "tā", 'eng': "she"},
+		{'sc': "是", 'py': "shì", 'eng': "to be"},
+		{'sc': "老师", 'py': "lăoshī", 'eng': "teacher"},
+		{'sc': "学生", 'py': "xuéshēng", 'eng': "student"},
+		{'sc': "朋友", 'py': "péngyǒu", 'eng': "friend"},
+		{'sc': "大家", 'py': "dàjiā", 'eng': "everyone"},
+		{'sc': "人", 'py': "rén", 'eng': "person"},
+		{'sc': "名字", 'py': "míngzi", 'eng': "name"},
+		{'sc': "名字", 'py': "míngzi", 'eng': "name"},
+		{'sc': "国", 'py': "guó", 'eng': "country"},
+		{'sc': "好", 'py': "hăo", 'eng': "good / very"},
+		{'sc': "没", 'py': "méi", 'eng': "negative indicator"},
+		{'sc': "有", 'py': "yŏu", 'eng': "to have"},
+		{'sc': "哪里", 'py': "nălĭ", 'eng': "where"},
+		{'sc': "叫", 'py': "jiào", 'eng': "to be called / to shout"},
+		{'sc': "要", 'py': "yào", 'eng': "to want"},
+		{'sc': "什么", 'py': "shénme", 'eng': "what"},
+		{'sc': "的", 'py': "de", 'eng': "possessive indicator"},
+		{'sc': "几", 'py': "jĭ", 'eng': "how many / several"},
+		{'sc': "岁", 'py': "suì", 'eng': "age"},
+		{'sc': "高兴", 'py': "gāoxìng", 'eng': "happy"},
+		{'sc': "见到", 'py': "jiàndào", 'eng': "to meet / to see"},
+		{'sc': "来", 'py': "lái", 'eng': "to come"},
+		{'sc': "很", 'py': "hěn", 'eng': "quite / very"},
+		{'sc': "非常", 'py': "fēicháng", 'eng': "very / extremely"},
+		{'sc': "也", 'py': "yĕ", 'eng': "also / too"},
+		{'sc': "可以", 'py': "kěyǐ", 'eng': "can / could"},
+		{'sc': "告诉", 'py': "gàosù", 'eng': "tell / let know"},
 	]
+	var data = {'hsk1data': hsk1data}
 
 	function shuffle(array) {
 		var currentIndex = array.length, temporaryValue, randomIndex;
@@ -60,27 +90,27 @@
 
 		return array;
 	}
-	function flashCard(hskEng, hskSc, hskPy, button) {
+	function flashCard(hskEng, hskSc, hskPy, dataName, button) {
 		if (currentPointer == -1) {
-			shuffle(hsk1data)
+			shuffle(data[dataName])
 		}
 		currentPointer++;
 		console.debug(currentPointer)
-		if (currentPointer == hsk1data.length*2) {
+		if (currentPointer == data[dataName].length*2) {
 			currentPointer = -1;
 			hskEng.html("&nbsp;");
 			hskSc.html("You're done!");
 			hskPy.html("&nbsp;");
 			button.html("Start");
 		} else if (currentPointer%2 == 0) {
-			hskEng.html(hsk1data[currentPointer/2]['eng']);
+			hskEng.html(data[dataName][currentPointer/2]['eng']);
 			hskSc.html("&nbsp;");
 			hskPy.html("&nbsp;");
 			button.html("Answer");
 		} else {
 			console.debug(currentPointer/2)
-			hskSc.html(hsk1data[(currentPointer-1)/2]['sc']);
-			hskPy.html(hsk1data[(currentPointer-1)/2]['py']);
+			hskSc.html("<a href='http://www.yellowbridge.com/chinese/dictionary.php?word=" + data[dataName][(currentPointer-1)/2]['sc'] + "'>" + data[dataName][(currentPointer-1)/2]['sc'] + "</a>");
+			hskPy.html(data[dataName][(currentPointer-1)/2]['py']);
 			button.html("Next");
 		}
 	}
@@ -104,7 +134,7 @@
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 							<li><a href="#about">About</a></li>
-							<li><a href="#settings">Settings</a></li>
+							<li><a href="#links">Links</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Flashcards <span class="caret"></span></a>
 								<ul class="dropdown-menu">
@@ -122,29 +152,26 @@
 
 				<!-- Main jumbotron for a primary marketing message or call to action -->
 				<div class="jumbotron">
-					<h1>Theme example</h1>
-					<p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
+					<h1>Mandarin</h1>
+					<p>This is a page containing miscellaneous resourses and tools on Mandarin language.</p>
 				</div>
 
 
-				<div class="page-header">
+				<div id="about" class="page-header">
 					<h1>About</h1>
 				</div>
-				<p>
-					<button type="button" class="btn btn-lg btn-default">Default</button>
-					<button type="button" class="btn btn-lg btn-primary">Primary</button>
-					<button type="button" class="btn btn-lg btn-success">Success</button>
-					<button type="button" class="btn btn-lg btn-info">Info</button>
-					<button type="button" class="btn btn-lg btn-warning">Warning</button>
-					<button type="button" class="btn btn-lg btn-danger">Danger</button>
-					<button type="button" class="btn btn-lg btn-link">Link</button>
-				</p>
+				<p>This page contains the summary of the resources on mandarin language I encountered during my studies.</p>
+				<p>My learning process started with the <a href="https://www.edx.org/course/basic-mandarin-chinese-level-1-mandarinx-mx101x-0">edX course "MandarinX: MX101x Chinese Language: Learn Basic Mandarin"</a>.
 
 				<div class="page-header">
-					<h1>Settings</h1>
+					<h1>Links</h1>
 				</div>
-				<p>Test
-				</p>
+				<ul>
+					<li><a href="https://www.edx.org/course/basic-mandarin-chinese-level-1-mandarinx-mx101x-0">edX course "MandarinX: MX101x Chinese Language: Learn Basic Mandarin"</a>
+						<li><a href="http://www.yellowbridge.com/">Yellow Bridge</a>: A very nice resource to use as a dictionary, containing even the order of strokes!
+							<li><a href="http://www.wohok.com/mandarin/hsk_test/eng/introduction.html">HSK test on WoHok</a>: HSK test preparation resource.
+							<!-- <li><a href=""></a> -->
+				</ul>
 				<div class="page-header">
 					<h1>Flashcards</h1>
 				</div>
@@ -167,7 +194,7 @@
 								<div id="hsk1py" class="flashcardSubField center-block text-center">&nbsp;</div>
 							</div>
 							<div class="row">
-								<div><button type="button" class="btn btn-lg btn-default center-block" onclick="flashCard($('#hsk1en'), $('#hsk1sc'), $('#hsk1py'), $(this))">Start</button></div>
+								<div><button type="button" class="btn btn-lg btn-default center-block" onclick="flashCard($('#hsk1en'), $('#hsk1sc'), $('#hsk1py'), 'hsk1data', $(this))">Start</button></div>
 							</div>
 						</div>
 					</div>
