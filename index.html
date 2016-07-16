@@ -6,24 +6,29 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<script src="js/flashcards.js"></script>
 
 	<style type="text/css">
 	body {
 		margin-top: 30px;
 		margin-bottom: 100px;
 	}
-	.panel-heading a:after {
-		font-family:'Glyphicons Halflings';
-		content:"\e114";
+	.panel-heading #headingLink:after {
+		font-family:'FontAwesome';
+		content:"\f151";
 		float: right;
 		color: grey;
 	}
-	.panel-heading a.collapsed:after {
-		content:"\e080";
+
+	.panel-heading #headingLink.collapsed:after {
+		content:"\f150";
 	}
 	div.center-block {
 		float: none;
@@ -33,87 +38,17 @@
 	.flashcardField {
 		font-size: 36px;
 	}
+	.flashcardSettings:before {
+		font-family:'FontAwesome';
+		content:"\f013\0000a0\0000a0";
+		float: right;
+		color: grey;
+	}
 	</style>
 	<script>
-	var currentPointer = -1;
-	var hsk1data = [
-		{'sc': "我", 'py': "wǒ", 'eng': "I, me"},
-		{'sc': "你", 'py': "nǐ", 'eng': "you (informal, singular)"},
-		{'sc': "你们", 'py': "nǐ men", 'eng': "you (informal, plural)"},
-		{'sc': "他", 'py': "tā", 'eng': "he"},
-		{'sc': "她", 'py': "tā", 'eng': "she"},
-		{'sc': "是", 'py': "shì", 'eng': "to be"},
-		{'sc': "老师", 'py': "lăoshī", 'eng': "teacher"},
-		{'sc': "学生", 'py': "xuéshēng", 'eng': "student"},
-		{'sc': "朋友", 'py': "péngyǒu", 'eng': "friend"},
-		{'sc': "大家", 'py': "dàjiā", 'eng': "everyone"},
-		{'sc': "人", 'py': "rén", 'eng': "person"},
-		{'sc': "名字", 'py': "míngzi", 'eng': "name"},
-		{'sc': "名字", 'py': "míngzi", 'eng': "name"},
-		{'sc': "国", 'py': "guó", 'eng': "country"},
-		{'sc': "好", 'py': "hăo", 'eng': "good / very"},
-		{'sc': "没", 'py': "méi", 'eng': "negative indicator"},
-		{'sc': "有", 'py': "yŏu", 'eng': "to have"},
-		{'sc': "哪里", 'py': "nălĭ", 'eng': "where"},
-		{'sc': "叫", 'py': "jiào", 'eng': "to be called / to shout"},
-		{'sc': "要", 'py': "yào", 'eng': "to want"},
-		{'sc': "什么", 'py': "shénme", 'eng': "what"},
-		{'sc': "的", 'py': "de", 'eng': "possessive indicator"},
-		{'sc': "几", 'py': "jĭ", 'eng': "how many / several"},
-		{'sc': "岁", 'py': "suì", 'eng': "age"},
-		{'sc': "高兴", 'py': "gāoxìng", 'eng': "happy"},
-		{'sc': "见到", 'py': "jiàndào", 'eng': "to meet / to see"},
-		{'sc': "来", 'py': "lái", 'eng': "to come"},
-		{'sc': "很", 'py': "hěn", 'eng': "quite / very"},
-		{'sc': "非常", 'py': "fēicháng", 'eng': "very / extremely"},
-		{'sc': "也", 'py': "yĕ", 'eng': "also / too"},
-		{'sc': "可以", 'py': "kěyǐ", 'eng': "can / could"},
-		{'sc': "告诉", 'py': "gàosù", 'eng': "tell / let know"},
-	]
-	var data = {'hsk1data': hsk1data}
-
-	function shuffle(array) {
-		var currentIndex = array.length, temporaryValue, randomIndex;
-
-		// While there remain elements to shuffle...
-		while (0 !== currentIndex) {
-
-			// Pick a remaining element...
-			randomIndex = Math.floor(Math.random() * currentIndex);
-			currentIndex -= 1;
-
-			// And swap it with the current element.
-			temporaryValue = array[currentIndex];
-			array[currentIndex] = array[randomIndex];
-			array[randomIndex] = temporaryValue;
-		}
-
-		return array;
-	}
-	function flashCard(hskEng, hskSc, hskPy, dataName, button) {
-		if (currentPointer == -1) {
-			shuffle(data[dataName])
-		}
-		currentPointer++;
-		console.debug(currentPointer)
-		if (currentPointer == data[dataName].length*2) {
-			currentPointer = -1;
-			hskEng.html("&nbsp;");
-			hskSc.html("You're done!");
-			hskPy.html("&nbsp;");
-			button.html("Start");
-		} else if (currentPointer%2 == 0) {
-			hskEng.html(data[dataName][currentPointer/2]['eng']);
-			hskSc.html("&nbsp;");
-			hskPy.html("&nbsp;");
-			button.html("Answer");
-		} else {
-			console.debug(currentPointer/2)
-			hskSc.html("<a href='http://www.yellowbridge.com/chinese/dictionary.php?word=" + data[dataName][(currentPointer-1)/2]['sc'] + "'>" + data[dataName][(currentPointer-1)/2]['sc'] + "</a>");
-			hskPy.html(data[dataName][(currentPointer-1)/2]['py']);
-			button.html("Next");
-		}
-	}
+		$( document ).ready(function() {
+			initFlashcards();
+		})
 	</script>
 	<head>
 		<body role="document">
@@ -163,56 +98,63 @@
 				<p>This page contains the summary of the resources on mandarin language I encountered during my studies.</p>
 				<p>My learning process started with the <a href="https://www.edx.org/course/basic-mandarin-chinese-level-1-mandarinx-mx101x-0">edX course "MandarinX: MX101x Chinese Language: Learn Basic Mandarin"</a>.
 
-				<div class="page-header">
-					<h1>Links</h1>
-				</div>
-				<ul>
-					<li><a href="https://www.edx.org/course/basic-mandarin-chinese-level-1-mandarinx-mx101x-0">edX course "MandarinX: MX101x Chinese Language: Learn Basic Mandarin"</a>
-						<li><a href="http://www.yellowbridge.com/">Yellow Bridge</a>: A very nice resource to use as a dictionary, containing even the order of strokes!
-							<li><a href="http://www.wohok.com/mandarin/hsk_test/eng/introduction.html">HSK test on WoHok</a>: HSK test preparation resource.
-							<!-- <li><a href=""></a> -->
-				</ul>
-				<div class="page-header">
-					<h1>Flashcards</h1>
-				</div>
-				<div class="panel-group" id="accordion">
-					<div class="panel panel-default" id="panel1">
-						<div class="panel-heading">
-							<h4 class="panel-title">
-								<a data-toggle="collapse" data-target="#collapseOne"
-								href="#collapseOne">
-								HSK Level 1
-							</a>
-						</h4>
-
+					<div class="page-header">
+						<h1>Links</h1>
 					</div>
-					<div id="collapseOne" class="panel-collapse collapse in">
-						<div class="panel-body">
-							<div class="row">
-								<div id="hsk1en" class="center-block text-center">&nbsp;</div>
-								<div id="hsk1sc" class="flashcardField center-block text-center">&nbsp;</div>
-								<div id="hsk1py" class="flashcardSubField center-block text-center">&nbsp;</div>
-							</div>
-							<div class="row">
-								<div><button type="button" class="btn btn-lg btn-default center-block" onclick="flashCard($('#hsk1en'), $('#hsk1sc'), $('#hsk1py'), 'hsk1data', $(this))">Start</button></div>
+					<ul>
+						<li><a href="https://www.edx.org/course/basic-mandarin-chinese-level-1-mandarinx-mx101x-0">edX course "MandarinX: MX101x Chinese Language: Learn Basic Mandarin"</a>
+							<li><a href="http://www.yellowbridge.com/">Yellow Bridge</a>: A very nice resource to use as a dictionary, containing even the order of strokes!
+								<li><a href="http://www.wohok.com/mandarin/hsk_test/eng/introduction.html">HSK test on WoHok</a>: HSK test preparation resource.
+									<!-- <li><a href=""></a> -->
+								</ul>
+								<div class="page-header">
+									<h1>Flashcards</h1>
+								</div>
+								<div class="panel-group" id="accordion">
+									<div class="panel panel-default" id="panel1">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a id="headingLink" data-toggle="collapse" data-target="#collapseOne"
+												href="#collapseOne">
+												EdX Lesson 1
+											</a>
+											<a class="flashcardSettings" href="#" data-toggle="modal" data-target="#settingsLesson1"></a>
+										</h4>
+									</div>
+									<div id="settingsLesson1" flashcard="lesson1" class="modal fade" role="dialog">
+										<div class="modal-dialog">
+
+											<!-- Modal content-->
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+													<h4 class="modal-title">EdX Lesson 1 settings</h4>
+												</div>
+												<div class="modal-body">
+													<p>Some text in the modal.</p>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div id="collapseOne" class="panel-collapse collapse in">
+										<div class="panel-body">
+											<div class="row">
+												<div id="lesson1en" class="center-block text-center">&nbsp;</div>
+												<div id="lesson1sc" class="flashcardField center-block text-center">&nbsp;</div>
+												<div id="lesson1py" class="flashcardSubField center-block text-center">&nbsp;</div>
+											</div>
+											<div class="row">
+												<div><button id="lesson1button" type="button" class="btn btn-lg btn-default center-block" onclick="flashCard('lesson1', $(this))">Start</button></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Panel 2 -->
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="panel panel-default" id="panel2">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a data-toggle="collapse" data-target="#collapseTwo"
-							href="#collapseTwo" class="collapsed">
-							HSK Level 2
-						</a>
-					</h4>
-
-				</div>
-				<div id="collapseTwo" class="panel-collapse collapse">
-					<div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
+					</body>
