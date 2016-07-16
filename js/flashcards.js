@@ -3,6 +3,7 @@ var currentData = {}
 var lesson1data = [
   {'sc': "我", 'py': "wǒ", 'eng': "I, me"},
   {'sc': "你", 'py': "nǐ", 'eng': "you (informal, singular)"},
+  {'sc': "您", 'py': "nín", 'eng': "you (formal, singular)"},
   {'sc': "你们", 'py': "nǐ men", 'eng': "you (informal, plural)"},
   {'sc': "他", 'py': "tā", 'eng': "he"},
   {'sc': "她", 'py': "tā", 'eng': "she"},
@@ -76,7 +77,7 @@ function initFlashcardDataSettings(element, lessonName) {
   var table = '<table class="table table-bordered">'
   table += '<thead><tr><th><input type="checkbox" ' + (checkAllValue? 'checked': '') + ' onchange="flashcardWordSettingChangeAll(this, \'' + lessonName + '\')"/></th> <th>Simplified</th> <th>Pinyin</th> <th>English</th></tr></thead>'
   $(data[lessonName]).each(function(idx, el) {
-    table += '<tr><td><input id="flashcardSettingCheckbox' + lessonName + idx + '" type="checkbox" onchange="flashcardWordSettingChange(this, \'' + lessonName + '\', ' + idx + ')" ' + (dataStorage[el['sc']]? 'checked': '')  + '/></td> <td>' + el['sc'] + '</td> <td>' + el['py'] + '</td> <td>' + el['eng'] + '</td></tr>'
+    table += '<tr><td><input id="flashcardSettingCheckbox' + lessonName + idx + '" type="checkbox" onchange="flashcardWordSettingChange(this, \'' + lessonName + '\', ' + idx + ')" ' + (dataStorage[el['sc']]? 'checked': '')  + '/></td> <td><a href="http://www.yellowbridge.com/chinese/dictionary.php?word=' + el['sc'] + '">'+ el['sc'] + '</a></td> <td>' + el['py'] + '</td> <td>' + el['eng'] + '</td></tr>'
   })
   table += '</table>'
   $(element).append(table)
