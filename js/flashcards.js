@@ -30,7 +30,7 @@ var lesson1data = [
   {'sc': "学生", 'py': "xuéshēng", 'eng': "student"},
   {'sc': "国", 'py': "guó", 'eng': "country"},
   {'sc': "男", 'py': "nán", 'eng': "male/boy"},
-  {'sc': "女", 'py': "nǚ", 'eng': "male/boy"},
+  {'sc': "女", 'py': "nǚ", 'eng': "female/girl"},
   {'sc': "的", 'py': "de", 'eng': "possessive indicator"},
   {'sc': "朋友", 'py': "péngyǒu", 'eng': "friend"},
 
