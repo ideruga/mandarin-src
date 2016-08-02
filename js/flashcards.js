@@ -47,7 +47,63 @@ var lesson1data = [
   {'sc': "可以", 'py': "kěyǐ", 'eng': "can / could"},
   {'sc': "告诉", 'py': "gàosù", 'eng': "tell / let know"},
 ]
-var data = {'lesson1': lesson1data}
+var daydayup_elementary1_lesson1data = [
+  {'sc': "我", 'py': "wǒ", 'eng': "I, me"},
+  {'sc': "你", 'py': "nǐ", 'eng': "you (informal, singular)"},
+  {'sc': "您", 'py': "nín", 'eng': "you (formal, singular)"},
+
+  {'sc': "他", 'py': "tā", 'eng': "he"},
+  {'sc': "她", 'py': "tā", 'eng': "she"},
+  {'sc': "它", 'py': "tā", 'eng': "it"},
+
+  {'sc': "你们", 'py': "nǐ men", 'eng': "you (plural)"},
+  {'sc': "我们", 'py': "wǒ men", 'eng': "we"},
+  {'sc': "他们", 'py': "tā men", 'eng': "they"},
+
+
+  {'sc': "是", 'py': "shì", 'eng': "to be"},
+  {'sc': "老师", 'py': "lăoshī", 'eng': "teacher"},
+  {'sc': "学生", 'py': "xuéshēng", 'eng': "student"},
+  {'sc': "商人", 'py': "shāngrén", 'eng': "business person"},
+
+  {'sc': "男人", 'py': "nánrén", 'eng': "man"},
+  {'sc': "女人", 'py': "nǚrén", 'eng': "woman"},
+
+  {'sc': "木头人", 'py': "mùtóurén", 'eng': "blockhead"},
+]
+
+var criLesson1 = [
+  {'sc': "我", 'py': "wǒ", 'eng': "I, me"},
+  {'sc': "你", 'py': "nǐ", 'eng': "you (informal, singular)"},
+  {'sc': "您", 'py': "nín", 'eng': "you (formal, singular)"},
+
+  {'sc': "好", 'py': "hǎo", 'eng': "good"},
+  {'sc': "吗", 'py': "ma", 'eng': "question particle"},
+
+  {'sc': "谢谢", 'py': "xièxie", 'eng': "thank you"},
+  {'sc': "嗨", 'py': "hāi", 'eng': "Hi"},
+  {'sc': "很", 'py': "hěn", 'eng': "very"},
+  {'sc': "吃", 'py': "chī", 'eng': "to eat"},
+  {'sc': "了", 'py': "le", 'eng': "past particle"},
+]
+
+var criLesson2 = [
+  {'sc': "是", 'py': "shì", 'eng': "to be"},
+  {'sc': "叫", 'py': "jiào", 'eng': "to call"},
+  {'sc': "加拿大", 'py': "Jiānádà", 'eng': "Canada"},
+  {'sc': "人", 'py': "rén", 'eng': "person"},
+  {'sc': "中国", 'py': "Zhōngguó", 'eng': "China"},
+  {'sc': "来自", 'py': "láizì", 'eng': "from"},
+  {'sc': "美国", 'py': "Měiguó", 'eng': "America"},
+  {'sc': "这位", 'py': "zhèwèi", 'eng': "this (person)"},
+  {'sc': "和", 'py': "hé", 'eng': "and"},
+  {'sc': "爸爸", 'py': "bàba", 'eng': "papa"},
+  {'sc': "妈妈", 'py': "māma", 'eng': "mama"},
+  {'sc': "", 'py': "", 'eng': ""},
+]
+
+
+var data = {'edxLesson1': lesson1data, 'daydayUp_elementary1_lesson1': daydayup_elementary1_lesson1data, 'criLesson1': criLesson1, 'criLesson2': criLesson2}
 
 function initFlashcardDataStorage(lessonName, value) {
   var storage = {}
@@ -82,7 +138,6 @@ function initFlashcardDataSettings(element, lessonName) {
 
   $(element).empty()
   var checkAllValue = $.grep(Object.keys(dataStorage), function(key, idx) {
-    console.debug(dataStorage[key])
     return !dataStorage[key]
   }).length == 0//no unchecked elements
 
@@ -95,7 +150,43 @@ function initFlashcardDataSettings(element, lessonName) {
   $(element).append(table)
 }
 
+function initHtmlStructure(flashcardName, containerName, title) {
+  var template = $('#flashcardTemplate').clone(true)
+  template.attr('id', flashcardName)
+  var heading = template.find('#headingLink')
+  heading.attr('id', 'headingLink' + flashcardName)
+  heading.attr('data-target', '#collapseTarget' + flashcardName)
+  heading.attr('href', '#collapseTarget' + flashcardName)
+  heading.html(title)
+
+  template.find('.flashcardSettings').attr('data-target', '#settingsTarget' + flashcardName)
+  var settingsTarget = template.find('#settingsTarget')
+  settingsTarget.attr('id', 'settingsTarget' + flashcardName)
+  settingsTarget.attr('flashcard', flashcardName)
+  settingsTarget.find('.modal-title').html(title + ' Settings')
+
+
+  template.find('#collapseTarget').attr('id', 'collapseTarget' + flashcardName)
+
+  template.find('#lessonEn').attr('id', flashcardName + 'en')
+  template.find('#lessonPy').attr('id', flashcardName + 'py')
+  template.find('#lessonSc').attr('id', flashcardName + 'sc')
+
+  var lessonButton = template.find('#lessonButton')
+  lessonButton.click(function(eventObject) {
+    flashCard(flashcardName, $(eventObject.target))
+  })
+
+  $('#' + containerName).append(template)
+}
+
 function initFlashcards() {
+  initHtmlStructure('edxLesson1', 'edxCoursesContainer', 'EdX Lesson 1')
+  initHtmlStructure('daydayUp_elementary1_lesson1', 'daydayUpContainer', 'Day Day Up Chinese Elementary 1, Lesson 1')
+  initHtmlStructure('criLesson1', 'criCoursesContainer', 'CRI Lesson 1')
+  initHtmlStructure('criLesson2', 'criCoursesContainer', 'CRI Lesson 2')
+
+
   $('[id^=settings]').each(function(idx, settingsDiv) {
     $(settingsDiv).find(".modal-body").each(function(idx2, el) {
       var lessonName = $(settingsDiv).attr('flashcard')
@@ -103,6 +194,8 @@ function initFlashcards() {
    })
   })
 }
+
+
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -129,7 +222,6 @@ function resetFlashcard(lessonName, prompt) {
     return dataStorage[el['sc']]
   })
   currentData[lessonName] = currentDataValues
-  console.debug(currentDataValues)
 
   shuffle(currentData[lessonName])
   $('#' + lessonName + 'en').html("&nbsp;");
@@ -151,7 +243,6 @@ function flashCard(lessonName, button) {
     $('#' + lessonName + 'py').html("&nbsp;");
     button.html("Answer");
   } else {
-    console.debug(currentPointer/2)
     $('#' + lessonName + 'sc').html("<a href='http://www.yellowbridge.com/chinese/dictionary.php?word=" + currentData[lessonName][(currentPointer-1)/2]['sc'] + "'>" + currentData[lessonName][(currentPointer-1)/2]['sc'] + "</a>");
     $('#' + lessonName + 'py').html(currentData[lessonName][(currentPointer-1)/2]['py']);
     button.html("Next");

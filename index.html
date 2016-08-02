@@ -20,21 +20,25 @@
 		margin-top: 30px;
 		margin-bottom: 100px;
 	}
-	.panel-heading #headingLink:after {
-		font-family:'FontAwesome';
-		content:"\f151";
-		float: right;
-		color: grey;
+	#flashcardTemplate {
+		display: none;
 	}
 
-	.panel-heading #headingLink.collapsed:after {
+	[id^="headingLink"]:after {
+		font-family:'FontAwesome';
+		float: right;
+		color: grey;
+		content:"\f151";
+	}
+
+	[id^="headingLink"].collapsed:after {
 		content:"\f150";
 	}
+
 	div.center-block {
 		float: none;
 	}
-	#collapseOne .panel-body, #collapseTwo .panel-body {
-	}
+
 	.flashcardField {
 		font-size: 36px;
 	}
@@ -46,9 +50,9 @@
 	}
 	</style>
 	<script>
-		$( document ).ready(function() {
-			initFlashcards();
-		})
+	$( document ).ready(function() {
+		initFlashcards();
+	})
 	</script>
 	<head>
 		<body role="document">
@@ -102,59 +106,73 @@
 						<h1>Links</h1>
 					</div>
 					<ul>
-						<li><a href="https://www.edx.org/course/basic-mandarin-chinese-level-1-mandarinx-mx101x-0">edX course "MandarinX: MX101x Chinese Language: Learn Basic Mandarin"</a>
-							<li><a href="http://www.yellowbridge.com/">Yellow Bridge</a>: A very nice resource to use as a dictionary, containing even the order of strokes!
-								<li><a href="http://www.wohok.com/mandarin/hsk_test/eng/introduction.html">HSK test on WoHok</a>: HSK test preparation resource.
-									<!-- <li><a href=""></a> -->
-								</ul>
-								<div class="page-header">
-									<h1>Flashcards</h1>
-								</div>
-								<div class="panel-group" id="accordion">
-									<div class="panel panel-default" id="panel1">
-										<div class="panel-heading">
-											<h4 class="panel-title">
-												<a id="headingLink" data-toggle="collapse" data-target="#collapseOne"
-												href="#collapseOne">
-												EdX Lesson 1
-											</a>
-											<a class="flashcardSettings" href="#" data-toggle="modal" data-target="#settingsLesson1"></a>
-										</h4>
-									</div>
-									<div id="settingsLesson1" flashcard="lesson1" class="modal fade" role="dialog">
-										<div class="modal-dialog">
+						<li><a href="https://www.edx.org/course/basic-mandarin-chinese-level-1-mandarinx-mx101x-0">edX course "MandarinX: MX101x Chinese Language: Learn Basic Mandarin"</a></li>
+						<li><a href="http://www.yellowbridge.com/">Yellow Bridge</a>: A very nice resource to use as a dictionary, containing even the order of strokes!</li>
+						<li><a href="http://www.wohok.com/mandarin/hsk_test/eng/introduction.html">HSK test on WoHok</a>: HSK test preparation resource.</li>
+						<li><a href="http://www.daydayupchinese.com">Day Day Up Chinese</a>: Good up to pre-intermediate level (stops there, 'coming soon'). Contains some exercises.</li>
+						<li><a href="http://www.zhongwenred.com/">Zhong Wen Red</a></li>
+						<li><a href="http://www.allchinesecourses.com/index.php?view=category&id=113%3Abasic-level&option=com_content&Itemid=85">All Chinese Courses</a>: a comprehensible list.</li>
+						<!-- <li><a href=""></a> -->
+					</ul>
+						<!-- Panel 1  -->
+						<div class="panel panel-default" id="flashcardTemplate">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a id="headingLink" data-toggle="collapse" data-target="#collapseTarget" class="collapsed"
+									href="#collapseTarget"></a>
+								<a class="flashcardSettings" href="#" data-toggle="modal" data-target="#settingsTarget"></a>
+							</h4>
+						</div>
+						<div id="settingsTarget" flashcard="" class="modal fade" role="dialog">
+							<div class="modal-dialog">
 
-											<!-- Modal content-->
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal">&times;</button>
-													<h4 class="modal-title">EdX Lesson 1 settings</h4>
-												</div>
-												<div class="modal-body">
-													<p>Some text in the modal.</p>
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-												</div>
-											</div>
-
-										</div>
+								<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">Lesson settings</h4>
 									</div>
-									<div id="collapseOne" class="panel-collapse collapse in">
-										<div class="panel-body">
-											<div class="row">
-												<div id="lesson1en" class="center-block text-center">&nbsp;</div>
-												<div id="lesson1sc" class="flashcardField center-block text-center">&nbsp;</div>
-												<div id="lesson1py" class="flashcardSubField center-block text-center">&nbsp;</div>
-											</div>
-											<div class="row">
-												<div><button id="lesson1button" type="button" class="btn btn-lg btn-default center-block" onclick="flashCard('lesson1', $(this))">Start</button></div>
-											</div>
-										</div>
+									<div class="modal-body">
+										<p>Some text in the modal.</p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 									</div>
 								</div>
 
-								<!-- Panel 2 -->
 							</div>
 						</div>
-					</body>
+						<div id="collapseTarget" class="panel-collapse collapse">
+							<div class="panel-body">
+								<div class="row">
+									<div id="lessonEn" class="center-block text-center">&nbsp;</div>
+									<div id="lessonSc" class="flashcardField center-block text-center">&nbsp;</div>
+									<div id="lessonPy" class="flashcardSubField center-block text-center">&nbsp;</div>
+								</div>
+								<div class="row">
+									<div><button id="lessonButton" type="button" class="btn btn-lg btn-default center-block" onclick="">Start</button></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				<div class="page-header">
+					<h1>Flashcards</h1>
+					<h2>EdX Course</h2>
+				</div>
+				<div class="panel-group" id="edxCoursesContainer">
+				</div>
+
+				<div class="page-header">
+					<h2>CRI Chinese Studio</h2>
+				</div>
+				<div class="panel-group" id="criCoursesContainer">
+				</div>
+
+				<div class="page-header">
+					<h2>Day Day Up Chinese</h2>
+				</div>
+				<div class="panel-group" id="daydayUpContainer">
+				</div>
+			</div>
+		</body>
