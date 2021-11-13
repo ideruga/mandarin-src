@@ -1,0 +1,754 @@
+{
+  "words": [
+    {
+      "chinese": "爱",
+      "pinyin": "ài",
+      "english": "to love; affection; to be fond of; to like"
+    },
+    {
+      "chinese": "八",
+      "pinyin": "bā",
+      "english": "eight; 8"
+    },
+    {
+      "chinese": "爸爸",
+      "pinyin": "bà ba",
+      "english": "father (informal); CL:个[ge4] ,位[wei4]"
+    },
+    {
+      "chinese": "杯子",
+      "pinyin": "bēi zi",
+      "english": "cup; glass; CL:个[ge4] ,支[zhi1]"
+    },
+    {
+      "chinese": "北京",
+      "pinyin": "běi jīng",
+      "english": "Beijing; capital of People&#x27;s Republic of China; Peking; PRC government"
+    },
+    {
+      "chinese": "本",
+      "pinyin": "běn",
+      "english": "origin; source; roots or stems of plants; this; the current; root; foundation; basis; classifier for books, periodicals, files etc; originally"
+    },
+    {
+      "chinese": "不客气",
+      "pinyin": "bú kè qi",
+      "english": "you&#x27;re welcome; it&#x27;s my pleasure (answer to someone who thanks)"
+    },
+    {
+      "chinese": "不",
+      "pinyin": "bù",
+      "english": "not (negative prefix); no"
+    },
+    {
+      "chinese": "菜",
+      "pinyin": "cài",
+      "english": "dish (type of food); vegetables; vegetable; cuisine; CL:盘[pan2] ,道[dao4]"
+    },
+    {
+      "chinese": "茶",
+      "pinyin": "chá",
+      "english": "tea; tea plant; CL:杯[bei1] ,壶[hu2]"
+    },
+    {
+      "chinese": "吃",
+      "pinyin": "chī",
+      "english": "to eat; to have one&#x27;s meal; to eradicate; to destroy; to absorb; to suffer; to exhaust"
+    },
+    {
+      "chinese": "出租车",
+      "pinyin": "chū zū chē",
+      "english": "taxi"
+    },
+    {
+      "chinese": "打电话",
+      "pinyin": "dǎ diàn huà",
+      "english": "to make a phone call"
+    },
+    {
+      "chinese": "大",
+      "pinyin": "dà",
+      "english": "big; huge; large; major; great; wide; deep; oldest; eldest"
+    },
+    {
+      "chinese": "的",
+      "pinyin": "de",
+      "english": "of; structural particle: used before a noun, linking it to preceding possessive or descriptive attributive"
+    },
+    {
+      "chinese": "点",
+      "pinyin": "diǎn",
+      "english": "a little; a bit; drop (of liquid); stain; spot; speck; jot; dot stroke (in Chinese characters); decimal point; point; mark (of degree or level); a place (with certain characteristics); iron bell; o’clock; some; (point) unit of measurement for type; to touch on briefly; to make clear; to light; to ignite; to kindle; period of time at night (24 minutes) (old); a drip; to dibble; classifier for small indeterminate quantities"
+    },
+    {
+      "chinese": "电脑",
+      "pinyin": "diàn nǎo",
+      "english": "computer; CL:台[tai2]"
+    },
+    {
+      "chinese": "电视",
+      "pinyin": "diàn shì",
+      "english": "television; TV; CL:台[tai2] ,个[ge4]"
+    },
+    {
+      "chinese": "电影",
+      "pinyin": "diàn yǐng",
+      "english": "movie; film; CL:部[bu4] ,幕[mu4] ,场[chang3]"
+    },
+    {
+      "chinese": "东西",
+      "pinyin": "dōng xi",
+      "english": "thing; stuff; person; CL:个[ge4] ,件[jian4]"
+    },
+    {
+      "chinese": "都",
+      "pinyin": "dōu",
+      "english": "all, both; entirely (due to) each; even; already"
+    },
+    {
+      "chinese": "读",
+      "pinyin": "dú",
+      "english": "to read; to study; reading of word (i.e. pronunciation), similar to 拼音[pin1 yin1]"
+    },
+    {
+      "chinese": "对不起",
+      "pinyin": "duì bu qǐ",
+      "english": "I&#x27;m sorry; excuse me; pardon me; if you please; sorry? (please repeat); unworthy; to let down; "
+    },
+    {
+      "chinese": "多",
+      "pinyin": "duō",
+      "english": "many; much; a lot of; numerous; multi-"
+    },
+    {
+      "chinese": "多少",
+      "pinyin": "duō shǎo",
+      "english": "how much; how many"
+    },
+    {
+      "chinese": "儿子",
+      "pinyin": "ér zi",
+      "english": "son"
+    },
+    {
+      "chinese": "二",
+      "pinyin": "èr",
+      "english": "two; 2; stupid (Beijing dialect)"
+    },
+    {
+      "chinese": "饭店",
+      "pinyin": "fàn diàn",
+      "english": "restaurant; hotel; CL:家[jia1],個|个[ge4]; "
+    },
+    {
+      "chinese": "飞机",
+      "pinyin": "fēi jī",
+      "english": "airplane; CL: 架[jia4]"
+    },
+    {
+      "chinese": "分钟",
+      "pinyin": "fēn zhōng",
+      "english": "minute"
+    },
+    {
+      "chinese": "高兴",
+      "pinyin": "gāo xìng",
+      "english": "happy; glad; willing (to do sth); in a cheerful mood"
+    },
+    {
+      "chinese": "个",
+      "pinyin": "gè",
+      "english": "classifier for people or objects in general; individual; this; that; size"
+    },
+    {
+      "chinese": "工作",
+      "pinyin": "gōng zuò",
+      "english": "job; work; construction; task; CL:个[ge4] ,份[fen4] ,项[xiang4]"
+    },
+    {
+      "chinese": "狗",
+      "pinyin": "gǒu",
+      "english": "dog; CL:只[zhi1] ,条[tiao2]"
+    },
+    {
+      "chinese": "汉语",
+      "pinyin": "hàn yǔ",
+      "english": "Chinese language"
+    },
+    {
+      "chinese": "好",
+      "pinyin": "hǎo",
+      "english": "good; well; proper; good to; easy to; very; so; (suffix indicating completion or readiness)"
+    },
+    {
+      "chinese": "号",
+      "pinyin": "hào",
+      "english": "day of a month; (suffix used after) name of a ship; (ordinal) number"
+    },
+    {
+      "chinese": "喝",
+      "pinyin": "hē",
+      "english": "to drink; to shout (a command)"
+    },
+    {
+      "chinese": "和",
+      "pinyin": "hé",
+      "english": "and; together with; with; sum; union; peace; harmony; surname He"
+    },
+    {
+      "chinese": "很",
+      "pinyin": "hěn",
+      "english": "very; (adverb of degree); quite; awfully"
+    },
+    {
+      "chinese": "后面",
+      "pinyin": "hòu miàn",
+      "english": "rear; back; behind; later; afterwards"
+    },
+    {
+      "chinese": "回",
+      "pinyin": "huí",
+      "english": "to go back; to turn around; to answer; to return; to circle; to revolve; Hui ethnic group; time; classifier for acts of a play; section or chapter (of a classic book)"
+    },
+    {
+      "chinese": "会",
+      "pinyin": "huì",
+      "english": "can; be possible; be able to; will; be likely to; be sure to; to assemble; to meet; to gather; to see; union; group; association; a moment (Taiwan pr. for this sense is hui3)"
+    },
+    {
+      "chinese": "几",
+      "pinyin": "jǐ",
+      "english": "how much; how many; several; a few"
+    },
+    {
+      "chinese": "家",
+      "pinyin": "jiā",
+      "english": "home; family; classifier for families or businesses; refers to the philosophical schools of pre-Han China; noun suffix for specialists in some activity such as musician or revolutionary, corresponds to English -ist, -er, -ary or -ian; surname Jia; CL:个[ge4]"
+    },
+    {
+      "chinese": "叫",
+      "pinyin": "jiào",
+      "english": "to call; to shout; to order; to ask; to be called; by (indicates agent in the passive mood)"
+    },
+    {
+      "chinese": "今天",
+      "pinyin": "jīn tiān",
+      "english": "today; at the present"
+    },
+    {
+      "chinese": "九",
+      "pinyin": "jiǔ",
+      "english": "nine; 9"
+    },
+    {
+      "chinese": "开",
+      "pinyin": "kāi",
+      "english": "to open; to start; to turn on; to operate (vehicle)"
+    },
+    {
+      "chinese": "看",
+      "pinyin": "kàn",
+      "english": "to look at"
+    },
+    {
+      "chinese": "看见",
+      "pinyin": "kàn jiàn",
+      "english": "to see; to catch sight of"
+    },
+    {
+      "chinese": "块",
+      "pinyin": "kuài",
+      "english": "unit of currency; lump (of earth); chunk; piece; classifier for pieces of cloth, cake, soap etc; colloquial word for yuan (or other unit of currency such as Hong Kong or US dollar etc), usually as 块钱"
+    },
+    {
+      "chinese": "来",
+      "pinyin": "lái",
+      "english": "to come; to arrive; to come round; ever since; next"
+    },
+    {
+      "chinese": "老师",
+      "pinyin": "lǎo shī",
+      "english": "teacher; CL:个[ge4] ,位[wei4]"
+    },
+    {
+      "chinese": "了",
+      "pinyin": "le",
+      "english": "(completed action marker); (modal particle intensifying preceding clause)"
+    },
+    {
+      "chinese": "冷",
+      "pinyin": "lěng",
+      "english": "cold"
+    },
+    {
+      "chinese": "里",
+      "pinyin": "lǐ",
+      "english": "inside; lining; interior; internal"
+    },
+    {
+      "chinese": "六",
+      "pinyin": "liù",
+      "english": "six; 6"
+    },
+    {
+      "chinese": "吗",
+      "pinyin": "ma",
+      "english": "(question tag)"
+    },
+    {
+      "chinese": "妈妈",
+      "pinyin": "mā ma",
+      "english": "mum; mama; mommy; mother; CL:个[ge4] ,位[wei4]"
+    },
+    {
+      "chinese": "买",
+      "pinyin": "mǎi",
+      "english": "to buy; to purchase"
+    },
+    {
+      "chinese": "猫",
+      "pinyin": "māo",
+      "english": "cat; CL:只[zhi1]"
+    },
+    {
+      "chinese": "没关系",
+      "pinyin": "méi guān xi",
+      "english": "it doesn&#x27;t matter"
+    },
+    {
+      "chinese": "没有",
+      "pinyin": "méi yǒu",
+      "english": "haven&#x27;t; hasn&#x27;t; doesn&#x27;t exist; to not have; to not be; "
+    },
+    {
+      "chinese": "米饭",
+      "pinyin": "mǐ fàn",
+      "english": "(cooked) rice"
+    },
+    {
+      "chinese": "名字",
+      "pinyin": "míng zi",
+      "english": "name (of a person or thing); CL:个[ge4]"
+    },
+    {
+      "chinese": "明天",
+      "pinyin": "míng tiān",
+      "english": "tomorrow"
+    },
+    {
+      "chinese": "哪",
+      "pinyin": "nǎ",
+      "english": "which? (interrogative, followed by classifier or numeral-classifier); "
+    },
+    {
+      "chinese": "哪儿",
+      "pinyin": "nǎ er",
+      "english": "where?; wherever; anywhere"
+    },
+    {
+      "chinese": "那",
+      "pinyin": "nà",
+      "english": "that; those; then (in that case); commonly pr. [nei4] before a classifier, esp. in Beijing; "
+    },
+    {
+      "chinese": "呢",
+      "pinyin": "ne",
+      "english": "(question particle for subjects already mentioned)"
+    },
+    {
+      "chinese": "能",
+      "pinyin": "néng",
+      "english": "to be able to; to be capable of; ability; capability; able; capable; can possibly; (usually used in the negative) to have the possibility of"
+    },
+    {
+      "chinese": "你",
+      "pinyin": "nǐ",
+      "english": "you (informal)"
+    },
+    {
+      "chinese": "年",
+      "pinyin": "nián",
+      "english": "year; CL:个[ge4]"
+    },
+    {
+      "chinese": "女儿",
+      "pinyin": "nǚ ér",
+      "english": "daughter"
+    },
+    {
+      "chinese": "朋友",
+      "pinyin": "péng you",
+      "english": "friend; CL:个[ge4] ,位[wei4]"
+    },
+    {
+      "chinese": "漂亮",
+      "pinyin": "piào liang",
+      "english": "pretty; beautiful"
+    },
+    {
+      "chinese": "苹果",
+      "pinyin": "píng guǒ",
+      "english": "apple; CL:个[ge4] ,颗[ke1]"
+    },
+    {
+      "chinese": "七",
+      "pinyin": "qī",
+      "english": "seven; 7"
+    },
+    {
+      "chinese": "前面",
+      "pinyin": "qián miàn",
+      "english": "ahead; in front; preceding; above"
+    },
+    {
+      "chinese": "钱",
+      "pinyin": "qián",
+      "english": "coin; money; CL:笔[bi3]"
+    },
+    {
+      "chinese": "请",
+      "pinyin": "qǐng",
+      "english": "to ask; to invite; please (do sth); to treat (to a meal etc); to request"
+    },
+    {
+      "chinese": "去",
+      "pinyin": "qù",
+      "english": "to go; to go to (a place); to cause to go or send (sb); to remove; to get rid of; (when used either before or after a verb) to go in order to do sth; to be apart from in space or time; (after a verb of motion indicates movement away from the speaker); (used after certain verbs to indicate detachment or separation); (of a time or an event etc) just passed or elapsed"
+    },
+    {
+      "chinese": "热",
+      "pinyin": "rè",
+      "english": "heat; to heat up; fervent; hot (of weather); warm up"
+    },
+    {
+      "chinese": "人",
+      "pinyin": "rén",
+      "english": "man; person; people; CL:个[ge4] ,位[wei4]"
+    },
+    {
+      "chinese": "认识",
+      "pinyin": "rèn shi",
+      "english": "to know; to recognize; to be familiar with; acquainted with sth; knowledge; understanding; awareness; cognition"
+    },
+    {
+      "chinese": "三",
+      "pinyin": "sān",
+      "english": "three; 3"
+    },
+    {
+      "chinese": "商店",
+      "pinyin": "shāng diàn",
+      "english": "store; shop; CL:家[jia1] ,个[ge4]"
+    },
+    {
+      "chinese": "上",
+      "pinyin": "shàng",
+      "english": "on"
+    },
+    {
+      "chinese": "上午",
+      "pinyin": "shàng wǔ",
+      "english": "morning; CL:个[ge4]"
+    },
+    {
+      "chinese": "少",
+      "pinyin": "shǎo",
+      "english": "few; little; lack"
+    },
+    {
+      "chinese": "谁",
+      "pinyin": "shéi",
+      "english": "who; also pronounced shui2"
+    },
+    {
+      "chinese": "什么",
+      "pinyin": "shén me",
+      "english": "what?; who?; something; anything"
+    },
+    {
+      "chinese": "十",
+      "pinyin": "shí",
+      "english": "ten; 10"
+    },
+    {
+      "chinese": "时候",
+      "pinyin": "shí hou",
+      "english": "time; length of time; moment; period"
+    },
+    {
+      "chinese": "是",
+      "pinyin": "shì",
+      "english": "to be; yes"
+    },
+    {
+      "chinese": "书",
+      "pinyin": "shū",
+      "english": "book; letter; CL:本[ben3] ,册[ce4] ,部[bu4]; see also Book of History"
+    },
+    {
+      "chinese": "水",
+      "pinyin": "shuǐ",
+      "english": "water; river; liquid; beverage"
+    },
+    {
+      "chinese": "水果",
+      "pinyin": "shuǐguǒ",
+      "english": "fruit"
+    },
+    {
+      "chinese": "睡觉",
+      "pinyin": "shuì jiào",
+      "english": "to go to bed; to go to sleep"
+    },
+    {
+      "chinese": "说",
+      "pinyin": "shuō",
+      "english": "to speak; to say; to explain; to scold; to tell off; a theory (usually in compounds such as 日心说 heliocentric theory); "
+    },
+    {
+      "chinese": "四",
+      "pinyin": "sì",
+      "english": "four; 4"
+    },
+    {
+      "chinese": "岁",
+      "pinyin": "suì",
+      "english": "classifier for years (of age); year; year (of crop harvests)"
+    },
+    {
+      "chinese": "他",
+      "pinyin": "tā",
+      "english": "he or him; (used for either sex when the sex is unknown or unimportant); (used before sb&#x27;s name for emphasis); (used as a meaningless mock object); other; another"
+    },
+    {
+      "chinese": "她",
+      "pinyin": "tā",
+      "english": "she"
+    },
+    {
+      "chinese": "太",
+      "pinyin": "tài",
+      "english": "too (much); very; extremely; highest; greatest"
+    },
+    {
+      "chinese": "天气",
+      "pinyin": "tiān qì",
+      "english": "weather"
+    },
+    {
+      "chinese": "听",
+      "pinyin": "tīng",
+      "english": "to listen; to hear; to obey; a can (loanword from English &#x27;tin&#x27;); classifier for canned beverages"
+    },
+    {
+      "chinese": "同学",
+      "pinyin": "tóng xué",
+      "english": "(fellow) classmate; CL:位[wei4] ,个[ge4]"
+    },
+    {
+      "chinese": "喂",
+      "pinyin": "wèi",
+      "english": "hello (interj., esp. on telephone); hey"
+    },
+    {
+      "chinese": "我",
+      "pinyin": "wǒ",
+      "english": "I; me; my"
+    },
+    {
+      "chinese": "我们",
+      "pinyin": "wǒ men",
+      "english": "we; us; ourselves; our"
+    },
+    {
+      "chinese": "五",
+      "pinyin": "wǔ",
+      "english": "five; 5"
+    },
+    {
+      "chinese": "喜欢",
+      "pinyin": "xǐ huan",
+      "english": "to like; to be fond of"
+    },
+    {
+      "chinese": "下",
+      "pinyin": "xià",
+      "english": "down; downwards; below; lower; later; next (week etc); second (of two parts); to decline; to go down"
+    },
+    {
+      "chinese": "下午",
+      "pinyin": "xià wǔ",
+      "english": "afternoon; p.m.; CL:个[ge4]"
+    },
+    {
+      "chinese": "下雨",
+      "pinyin": "xià yǔ",
+      "english": "to rain; rainy"
+    },
+    {
+      "chinese": "先生",
+      "pinyin": "xiān sheng",
+      "english": "Mister (Mr.); husband; doctor (topolect); teacher; CL:个[ge4] ,位[wei4]"
+    },
+    {
+      "chinese": "现在",
+      "pinyin": "xiàn zài",
+      "english": "now; at present; at the moment; modern; current; nowadays"
+    },
+    {
+      "chinese": "想",
+      "pinyin": "xiǎng",
+      "english": "to think; to believe; to suppose; to wish; to want; to miss"
+    },
+    {
+      "chinese": "小",
+      "pinyin": "xiǎo",
+      "english": "small; tiny; young"
+    },
+    {
+      "chinese": "小姐",
+      "pinyin": "xiǎo jie",
+      "english": "young lady; Miss; (slang) prostitute; CL:个[ge4] ,位[wei4]"
+    },
+    {
+      "chinese": "些",
+      "pinyin": "xiē",
+      "english": "some; few; several; (a measure word)"
+    },
+    {
+      "chinese": "写",
+      "pinyin": "xiě",
+      "english": "to write"
+    },
+    {
+      "chinese": "谢谢",
+      "pinyin": "xiè xie",
+      "english": "to thank; thanks"
+    },
+    {
+      "chinese": "星期",
+      "pinyin": "xīng qī",
+      "english": "week; CL:个[ge4]"
+    },
+    {
+      "chinese": "学生",
+      "pinyin": "xué sheng",
+      "english": "student; school child"
+    },
+    {
+      "chinese": "学习",
+      "pinyin": "xué xí",
+      "english": "to learn; to study"
+    },
+    {
+      "chinese": "学校",
+      "pinyin": "xué xiào",
+      "english": "school; CL:所[suo3]"
+    },
+    {
+      "chinese": "一",
+      "pinyin": "yī",
+      "english": "one; 1; single; a (article); as soon as; entire; whole; all; throughout; &#x27;one&#x27; radical in Chinese characters (Kangxi radical 1)"
+    },
+    {
+      "chinese": "一点儿",
+      "pinyin": "yī diǎn er",
+      "english": "a little (bit)"
+    },
+    {
+      "chinese": "医生",
+      "pinyin": "yī shēng",
+      "english": "doctor; CL:个[ge4] ,位[wei4] ,名[ming2]"
+    },
+    {
+      "chinese": "医院",
+      "pinyin": "yī yuàn",
+      "english": "hospital; CL:所[suo3] ,家[jia1] ,座[zuo4]"
+    },
+    {
+      "chinese": "衣服",
+      "pinyin": "yī fu",
+      "english": "clothes; CL:件[jian4] ,套[tao4]"
+    },
+    {
+      "chinese": "椅子",
+      "pinyin": "yǐ zi",
+      "english": "chair; CL:把[ba3] ,套[tao4]"
+    },
+    {
+      "chinese": "有",
+      "pinyin": "yǒu",
+      "english": "to have; there is; there are; to exist; to be"
+    },
+    {
+      "chinese": "月",
+      "pinyin": "yuè",
+      "english": "month; moon; CL:个[ge4] ,轮[lun2]"
+    },
+    {
+      "chinese": "再见",
+      "pinyin": "zài jiàn",
+      "english": "goodbye; see you again later"
+    },
+    {
+      "chinese": "在",
+      "pinyin": "zài",
+      "english": "(located) at; (to be) in; to exist; in the middle of doing sth; (indicating an action in progress)"
+    },
+    {
+      "chinese": "怎么",
+      "pinyin": "zěn me",
+      "english": "how?; what?; why?"
+    },
+    {
+      "chinese": "怎么样",
+      "pinyin": "zěn me yàng",
+      "english": "how are things? how?; how about?; how was it?"
+    },
+    {
+      "chinese": "这",
+      "pinyin": "zhè",
+      "english": "this; these; (commonly pr. [zhei4] before a classifier, esp. in Beijing); "
+    },
+    {
+      "chinese": "中国",
+      "pinyin": "zhōng guó",
+      "english": "China; Middle Kingdom"
+    },
+    {
+      "chinese": "中午",
+      "pinyin": "zhōng wǔ",
+      "english": "noon; midday; CL:个[ge4]"
+    },
+    {
+      "chinese": "住",
+      "pinyin": "zhù",
+      "english": "to live; to dwell; to stay; to reside; to stop"
+    },
+    {
+      "chinese": "桌子",
+      "pinyin": "zhuō zi",
+      "english": "table; desk; CL:张[zhang1] ,套[tao4]"
+    },
+    {
+      "chinese": "字",
+      "pinyin": "zì",
+      "english": "letter; character; word; symbol; CL:个[ge4]"
+    },
+    {
+      "chinese": "昨天",
+      "pinyin": "zuó tiān",
+      "english": "yesterday"
+    },
+    {
+      "chinese": "做",
+      "pinyin": "zuò",
+      "english": "to do; to make; to produce; to write; to compose; to act as; to engage in; to hold (a party); to be; to become; to function (in some capacity); to serve as; to be used for; to form (a bond or relationship); to pretend; to feign; to act a part; to put on appearance"
+    },
+    {
+      "chinese": "坐",
+      "pinyin": "zuò",
+      "english": "to sit; to take a seat; to take (a bus, airplane etc); to bear fruit"
+    }
+  ]
+}
