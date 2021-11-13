@@ -1,7 +1,7 @@
 export class TimeQuiz {
-    public _question: string;
-    public _answer: string;
-    public _showAnswer: boolean = false;
+    private readonly _question: string;
+    private readonly _answer: string;
+    private _showAnswer: boolean = false;
 
     constructor() {
         [this._question, this._answer] = this.initQuiz();
