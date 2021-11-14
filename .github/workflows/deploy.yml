@@ -15,8 +15,8 @@ jobs:
           cd dist
           git init
           git remote add origin https://x-access-token:${{ secrets.MANDARIN_SECRET }}@github.com/ideruga/mandarin-src.git
-          git branch --set-upstream-to=origin/main main
           git pull
+          git branch --set-upstream-to=origin/main main
           git add -A
           git config --local user.email "i.deruga@gmail.com"
           git config --local user.name "Igor Deruga"
