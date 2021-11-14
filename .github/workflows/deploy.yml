@@ -10,3 +10,19 @@ jobs:
           node-version: '14'
       - run: npm ci
       - run: npx webpack
+      - name: Init new repo in dist folder and commit generated files
+        run: |
+          cd dist
+          git init
+          git add -A
+          git config --local user.email "i.deruga@gmail.com"
+          git config --local user.name "Igor Deruga"
+          git commit -m 'deploy'
+      - name: Force push to destination branch
+        uses: ad-m/github-push-action@v0.5.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+          force: false
+          directory: ./docs/.vuepress/dist
+          repository: mandarin
