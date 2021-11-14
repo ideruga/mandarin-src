@@ -17,7 +17,7 @@ jobs:
           git add -A
           git config --local user.email "i.deruga@gmail.com"
           git config --local user.name "Igor Deruga"
-          git remote set-url origin https://x-access-token:${{ secrets.MANDARIN_SECRET }}@github.com/ideruga/mandarin-src.git
+          git remote add origin https://x-access-token:${{ secrets.MANDARIN_SECRET }}@github.com/ideruga/mandarin-src.git
           git commit -m 'deploy'
           git push
 #      - name: Force push to destination branch
