@@ -42,10 +42,8 @@ class Time {
     private constructor(private hour: number, private minute: number) {};
 
     public toTimeString(): string {
-        const hours = pad(Math.floor(Math.random()*24));
-        const minutes = pad(Math.floor(Math.random()*60));
 
-        return '[' + pad(hours) + ':' + pad(minutes) + ']';
+        return '[' + pad(this.hour) + ':' + pad(this.minute) + ']';
     }
 
     public toChineseString(): string {
@@ -100,5 +98,5 @@ class Time {
     }
 }
 const pad = (num) => {
-    return num < 10? '0' + num: num;
+    return num < 10? '0' + num: '' + num;
 }
