@@ -2,18 +2,34 @@ import 'bootstrap';
 
 import './style/frame.scss';
 
-import hsk1 from './data/hsk1.json';
 import state from "./model/state";
-import {TimeQuiz} from "./model/timeQuiz";
 import TimeQuizComponent from "./component/TimeQuizComponent";
-// import '@webcomponents/custom-elements';
 
+const clear = () => {
+    const socket = document.getElementsByTagName("socket")[0];
 
+    while (socket.firstChild) {
+        socket.removeChild(socket.firstChild);
+    }
+}
 
-export const initComponents = () => {
+const showTimeQuiz = () => {
+    clear();
+    const socket = document.getElementsByTagName("socket")[0];
+    const stateValue = encodeURIComponent(JSON.stringify(state));
+    const quizElement = document.createElement('time-quiz');
+    quizElement.setAttribute('state', stateValue);
+    socket.appendChild(quizElement);
+
+    console.debug('showing time quiz!');
+}
+
+const initComponents = () => {
     // for (let a in hsk1.words) {
     //     console.debug(a);
     // }
 
     customElements.define('time-quiz', TimeQuizComponent);
 }
+
+export { initComponents, showTimeQuiz };
